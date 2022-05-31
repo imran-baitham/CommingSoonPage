@@ -1,0 +1,346 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  /*
+        Purple: hsl(250, 66%, 75%)
+        Blue: hsl(207, 90%, 72%)
+        Pink: hsl(356, 66%, 75%)
+        Teal: hsl(174, 63%, 62%)
+        hsl(var(--hue), 100%, 99%)
+  */
+  --first-hue: 27;
+  --sat: 80%;
+  --lig: 61%;
+  --second-hue: 10;
+  --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
+  --text-color: hsl(var(--second-hue), 255%, 255%);
+  --body-color: rgb(0, 0, 0);
+  --container-color: rgb(34, 34, 34);
+  --text-color-dark: hsl(var(--second-hue), 4%, 85%);
+  --bg-theme: rgba(0, 0, 0, 0.37);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --biggest-font-size: 35px;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  --tiny-font-size: 0.625rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semibold: 600;
+
+  /*========== z index ==========*/
+  --z-modal: 3;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 968px) {
+  :root {
+    --biggest-font-size: 50px;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: 0.4s;
+  /* for light mode animation */
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semibold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*========== Variables Dark theme ==========*/
+body.light-theme {
+  --text-color: rgb(0, 0, 0);
+  --body-color: hsl(var(--second-hue), 100%, 99%);
+  --text-color-dark: hsl(var(--second-hue), 8%, 35%);
+  --container-color: rgb(241, 241, 241);
+  --bg-theme: rgba(189, 189, 189, 0.466);
+}
+
+/*=============== HEADER & NAV===============*/
+header {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  background-color: transparent;
+  transition: 0.4s;
+  /* for light mode animation */
+}
+
+.nav {
+  margin: 10px 10px;
+}
+
+.bookcler {
+  display: none;
+}
+
+/*=============== THEME ===============*/
+
+.change-theme {
+  font-size: 1.25rem;
+  cursor: pointer;
+  transform: 0.3s;
+  border: 1px solid rgb(19, 47, 76);
+  padding: 5px;
+  border-radius: 30px;
+  font-weight: var(--font-medium);
+  fill: currentColor;
+  color: var(--text-color-dark);
+}
+
+.change-theme:hover {
+  color: var(--first-color);
+}
+
+/* ============================================= */
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.container .left {
+  width: 100%;
+  padding: 50px 30px 0 30px;
+}
+
+.container .right {
+  width: 100%;
+  height: 300px;
+  background-image: url(/assets/img/hero-desktop.jpg);
+  background-size: cover;
+  background-color: var(--bg-theme);
+  background-blend-mode: color;
+  transition: 0.4s;
+}
+
+.container .right img {
+  width: 100%;
+  height: 100%;
+}
+
+.container .left h1 {
+  letter-spacing: .5rem;
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: var(--first-color);
+  line-height: 3.5rem;
+}
+
+.container .left h1 .span_small {
+  letter-spacing: .5rem;
+  text-align: center;
+  font-size: var(--h1-font-size);
+  text-transform: uppercase;
+  color: var(--first-color);
+  line-height: 3.5rem;
+  font-weight: var(--font-semibold);
+}
+
+.container .left h1 span {
+  color: hsl(0, 6%, 24%);
+  font-weight: 700;
+}
+
+.container .left p {
+  max-width: 450px;
+  text-align: center;
+  font-size: .9rem;
+  line-height: 1.5rem;
+  margin: 20px auto 30px auto;
+}
+
+footer {
+  padding: 10px 0;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: .8rem;
+  line-height: 1.2rem;
+}
+
+footer a {
+  color: aqua;
+  text-decoration: none;
+}
+
+
+.left h4 {
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+  font-weight: var(--font-medium);
+  font-size: var(--h2-font-size);
+  line-height: 1.25;
+  color: var(--first-color);
+}
+
+.counter {
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: 600;
+  font-size: var(--biggest-font-size);
+  line-height: 1;
+  padding-bottom: 1rem;
+}
+
+.counter__time {
+  margin-top: 0.5rem;
+  margin-right: 6px;
+}
+
+.counter span {
+  font-weight: 400;
+  font-size: var(--h3-font-size);
+  color: var(--first-color);
+  position: relative;
+  left: -2px;
+}
+
+.btn {
+  padding: 10px 30px;
+  border: 1px solid var(--first-color);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: 0.4s;
+  position: absolute;
+  top: 48%;
+  left: 52%;
+}
+
+.btn:hover {
+  background-color: var(--first-color);
+  transition: 0.4s;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    padding-left: 9.3%;
+  }
+
+  .container {
+    padding-top: 0;
+    flex-direction: row;
+    padding-bottom: 0;
+  }
+
+  .container .right {
+    width: 80%;
+    height: 100vh;
+    background-image: url(/assets/img/hero-desktop.jpg);
+  }
+
+  .container .left {
+    padding-top: 14vh;
+    width: 100%;
+    height: 100vh;
+    padding-left: 10%;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .container .left h1 {
+    text-align: left;
+    font-size: 5rem;
+    line-height: 5.5rem;
+  }
+
+  .container .left p {
+    margin-left: 0;
+    text-align: left;
+    font-size: 1.1rem;
+  }
+
+  .bookcler {
+    font-weight: var(--font-semibold);
+    padding-left: 10px;
+    display: block;
+  }
+}
+
+.model {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-theme);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+}
+
+.pop_up {
+  width: 50%;
+  height: 45vh;
+  background-color: var(--container-color);
+  border: 1.5px solid var(--first-color);
+}
