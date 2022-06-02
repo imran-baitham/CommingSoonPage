@@ -33,3 +33,14 @@ let showModel = document.querySelector(".btn")
 showModel.addEventListener("click", () => {
   document.querySelector(".model").style.visibility = "visible";
 })
+
+document.querySelector(".bx-x").addEventListener("click", () => {
+  document.querySelector(".model").style.visibility = "hidden";
+})
+document.querySelector(".pop_up").addEventListener("click", (e) => {
+  e.stopPropagation()
+})
+
+// document.querySelector(".model").addEventListener("click", () => {
+//   document.querySelector(".model").style.visibility = "hidden";
+// })

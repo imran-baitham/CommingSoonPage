@@ -278,6 +278,96 @@ footer a {
   transition: 0.4s;
 }
 
+/* =================== */
+.model {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-theme);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  /* visibility: hidden; */
+}
+
+.pop_up {
+  width: 47rem;
+  height: auto;
+  background-color: var(--container-color);
+  border: 1.5px solid var(--first-color);
+  margin-right: 1rem;
+  margin-left: 1rem;
+  display: block;
+  flex-direction: column;
+}
+
+.pop_first {
+  width: 90%;
+  background-image: url(/assets/img/imran.png);
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--bg-theme);
+  background-blend-mode: color;
+  border-right: 1px solid var(--first-color);
+}
+
+.pop_second {
+  padding: 3%;
+}
+
+.pop_second h2 {
+  font-size: var(--normal-font-size);
+  line-height: 2rem;
+  font-weight: var(--font-medium);
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+  padding-top: 1rem;
+}
+
+/*  */
+.pop_second h3 {
+  padding-top: 2rem;
+  text-transform: uppercase;
+}
+
+.close_btn {
+  float: right;
+  cursor: pointer;
+}
+
+.close_btn i {
+  color: var(--first-color);
+  font-size: var(--h2-font-size);
+}
+
+.form_style {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+}
+
+.form_style input {
+  width: 100%;
+  outline: none;
+  border: 1px solid black;
+  padding: 6px 8px;
+  border: 2px solid var(--first-color);
+
+}
+
+.form_style button {
+  width: 100%;
+  padding: 10px 10px;
+  margin-top: .5rem;
+  border: 1px solid var(--first-color);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
 @media only screen and (min-width: 768px) {
   header {
     padding-left: 9.3%;
@@ -322,25 +412,9 @@ footer a {
     padding-left: 10px;
     display: block;
   }
-}
 
-.model {
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  right: 0%;
-  width: 100%;
-  height: 100vh;
-  background-color: var(--bg-theme);
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  visibility: hidden;
-}
-
-.pop_up {
-  width: 50%;
-  height: 45vh;
-  background-color: var(--container-color);
-  border: 1.5px solid var(--first-color);
+  .pop_up {
+    display: flex;
+    flex-direction: row;
+  }
 }
